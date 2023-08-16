@@ -5,6 +5,11 @@ from .views import *
 #
 router = routers.DefaultRouter()
 # router.register(r'user/<int:pk>/posts/', )
+router.register(r'users', UserViewSet)
+router.register(r'exercises', ExcerciseViewSet)
+router.register(r'user-logs', UserLogViewSet)
+router.register(r'questions', QuestionViewSet)
+router.register(r'options', OptionViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
