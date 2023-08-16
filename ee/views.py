@@ -25,3 +25,24 @@ class UserDetail(generics.RetrieveAPIView):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = CustomUser.objects.all()
     serializer_class = CustomUserSerializer
+
+#---------------------------------------------
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+class ExcerciseViewSet(viewsets.ModelViewSet):
+    queryset = Excercise.objects.all()
+    serializer_class = ExcerciseSerializer
+
+class UserLogViewSet(viewsets.ModelViewSet):
+    queryset = UserLog.objects.all()
+    serializer_class = UserLogSerializer
+
+class QuestionViewSet(viewsets.ModelViewSet):
+    queryset = Question.objects.all()
+    serializer_class = QuestionSerializer
+
+class OptionViewSet(viewsets.ModelViewSet):
+    queryset = Option.objects.all()
+    serializer_class = OptionSerializer

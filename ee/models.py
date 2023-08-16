@@ -8,6 +8,7 @@ class CustomUser(AbstractUser):
     def __str__(self):
         return self.username
 
+#---------------------------------------
 class User(models.Model):
     user_id = models.AutoField(primary_key=True)
     email = models.CharField(max_length=255)
