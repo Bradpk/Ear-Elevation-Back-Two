@@ -10,6 +10,7 @@ router.register(r'exercises', ExcerciseViewSet)
 router.register(r'user-logs', UserLogViewSet)
 router.register(r'questions', QuestionViewSet)
 router.register(r'options', OptionViewSet)
+# router.register(r'create-user', UserCreate)
 
 urlpatterns = [
     path('', include(router.urls)),

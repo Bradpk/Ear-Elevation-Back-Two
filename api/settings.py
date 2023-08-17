@@ -200,3 +200,22 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = []
 
 AUTH_USER_MODEL = 'ee.CustomUser'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'logs.txt',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}

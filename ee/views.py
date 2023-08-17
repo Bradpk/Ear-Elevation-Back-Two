@@ -21,6 +21,7 @@ class UserCreate(APIView):
                 json = serializer.data
                 return Response(json, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
 class UserDetail(generics.RetrieveAPIView):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = CustomUser.objects.all()
