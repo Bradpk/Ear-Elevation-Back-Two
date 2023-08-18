@@ -51,5 +51,5 @@ class OptionViewSet(viewsets.ModelViewSet):
 #----------
 
 class TestViewSet(viewsets.ModelViewSet):
-    queryset = Option.objects.all()
+    queryset = Test.objects.all()
     serializer_class = TestSerializer

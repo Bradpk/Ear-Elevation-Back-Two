@@ -5,7 +5,6 @@ from django.utils import timezone
 class CustomUser(AbstractUser):
     def __str__(self):
         return self.email
-
 #---------------------------------------
 class User(models.Model):
     user_id = models.AutoField(primary_key=True)
