@@ -9,7 +9,8 @@ router.register(r'users', UserViewSet)
 router.register(r'exercises', ExcerciseViewSet)
 router.register(r'user-logs', UserLogViewSet)
 router.register(r'questions', QuestionViewSet)
-router.register(r'options', OptionViewSet)
+# router.register(r'options', OptionViewSet)
+router.register(r'test', TestViewSet)
 # router.register(r'create-user', UserCreate)
 
 urlpatterns = [
@@ -18,4 +19,5 @@ urlpatterns = [
     path('users/<int:pk>/', UserDetail.as_view(), name="get_user_details"),
     path('user/login/', jwt_views.TokenObtainPairView.as_view(), name='token_create'),
     path('token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

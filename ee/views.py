@@ -47,3 +47,9 @@ class QuestionViewSet(viewsets.ModelViewSet):
 class OptionViewSet(viewsets.ModelViewSet):
     queryset = Option.objects.all()
     serializer_class = OptionSerializer
+
+#----------
+
+class TestViewSet(viewsets.ModelViewSet):
+    queryset = Option.objects.all()
+    serializer_class = TestSerializer

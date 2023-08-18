@@ -10,7 +10,7 @@ class CustomUser(AbstractUser):
 class User(models.Model):
     user_id = models.AutoField(primary_key=True)
     email = models.CharField(max_length=255)
-    username = models.CharField(max_length=100)
+    # username = models.CharField(max_length=100)
     password = models.CharField(max_length=255)
     date_registered = models.DateTimeField()
 
@@ -38,3 +38,12 @@ class Option(models.Model):
     question_id = models.ForeignKey(Question, on_delete=models.CASCADE)
     text_option = models.CharField(max_length=255)
     is_correct = models.BooleanField()
+
+
+#----------------
+
+class Test(models.Model):
+    test_id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=100)
+    content = models.CharField(max_length=100)
+

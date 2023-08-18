@@ -49,5 +49,10 @@ class OptionSerializer(serializers.ModelSerializer):
 
 
 
+#-------
 
+class TestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Test
+        fields = '__all__'
 
