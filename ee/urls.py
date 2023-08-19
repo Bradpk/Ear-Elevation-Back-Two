@@ -11,7 +11,7 @@ router.register(r'user-logs', UserLogViewSet)
 router.register(r'questions', QuestionViewSet)
 router.register(r'options', OptionViewSet)
 router.register(r'test', TestViewSet)
-# router.register(r'create-user', UserCreate)
+
 
 urlpatterns = [
     path('', include(router.urls)),
