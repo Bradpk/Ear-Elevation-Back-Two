@@ -30,7 +30,7 @@ class UserDetail(generics.RetrieveAPIView):
 #---------------------------------------------
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
-    serializer_class = UserSerializer
+    serializer_class = CustomUserSerializer
 
 class ExcerciseViewSet(viewsets.ModelViewSet):
     queryset = Excercise.objects.all()
@@ -53,3 +53,14 @@ class OptionViewSet(viewsets.ModelViewSet):
 class TestViewSet(viewsets.ModelViewSet):
     queryset = Test.objects.all()
     serializer_class = TestSerializer
+
+
+
+class FilteredUserLogListView(generics.ListAPIView):
+    queryset = UserLog.objects.all()
+    serializer_class = UserLogSerializer
+
+    def get_queryset(self):
+        user_id = self.kwargs['user_id']
+        queryset = UserLog.objects.filter(user_id=user_id)
+        return queryset
