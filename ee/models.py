@@ -23,7 +23,8 @@ class UserLog(models.Model):
     log_id = models.AutoField(primary_key=True)
     user_id = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     exercise_id = models.CharField(max_length=100)
-    date_completed = models.DateTimeField()
+    # date_completed = models.DateTimeField()
+    date_completed = models.CharField(max_length=100)
     total_questions = models.CharField(max_length=100)
     correct_answers = models.CharField(max_length=100)
 
