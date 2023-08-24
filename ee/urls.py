@@ -2,17 +2,11 @@ from django.urls import path, include
 from rest_framework_simplejwt import views as jwt_views
 from rest_framework import routers
 from .views import *
-#
+#------------------------------------------------------------------------------------------------------------------------------
 router = routers.DefaultRouter()
-# router.register(r'user/<int:pk>/posts/', )
 router.register(r'users', UserViewSet)
-router.register(r'exercises', ExcerciseViewSet)
 router.register(r'user-logs', UserLogViewSet)
-router.register(r'questions', QuestionViewSet)
-router.register(r'options', OptionViewSet)
-router.register(r'test', TestViewSet)
-
-
+#------------------------------------------------------------------------------------------------------------------------------
 urlpatterns = [
     path('', include(router.urls)),
     path('user-log/<int:user_id>/', FilteredUserLogListView.as_view(), name='filtered_user_logs'),

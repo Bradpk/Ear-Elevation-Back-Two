@@ -9,7 +9,7 @@ from rest_framework.decorators import action
 from .models import *
 from .serializers import *
 from django.db.models import Sum
-
+#------------------------------------------------------------------------------------------------------------------------------
 class UserCreate(APIView):
     permission_classes = (permissions.AllowAny,)
     authentication_classes = ()
@@ -26,36 +26,15 @@ class UserDetail(generics.RetrieveAPIView):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = CustomUser.objects.all()
     serializer_class = CustomUserSerializer
-
-#---------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = CustomUserSerializer
-
-class ExcerciseViewSet(viewsets.ModelViewSet):
-    queryset = Excercise.objects.all()
-    serializer_class = ExcerciseSerializer
-
+#------------------------------------------------------------------------------------------------------------------------------
 class UserLogViewSet(viewsets.ModelViewSet):
     queryset = UserLog.objects.all()
     serializer_class = UserLogSerializer
-
-class QuestionViewSet(viewsets.ModelViewSet):
-    queryset = Question.objects.all()
-    serializer_class = QuestionSerializer
-
-class OptionViewSet(viewsets.ModelViewSet):
-    queryset = Option.objects.all()
-    serializer_class = OptionSerializer
-
-#----------
-
-class TestViewSet(viewsets.ModelViewSet):
-    queryset = Test.objects.all()
-    serializer_class = TestSerializer
-
-
-
+#------------------------------------------------------------------------------------------------------------------------------
 class FilteredUserLogListView(generics.ListAPIView):
     queryset = UserLog.objects.all()
     serializer_class = UserLogSerializer
