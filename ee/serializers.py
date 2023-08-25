@@ -30,6 +30,3 @@ class UserLogSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserLog
         fields = '__all__'
-
-
-

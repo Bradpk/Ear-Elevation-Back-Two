@@ -20,5 +20,3 @@ class UserLog(models.Model):
     total_questions = models.CharField(max_length=100)
     correct_answers = models.CharField(max_length=100)
     percentage_correct = models.CharField(max_length=200)
-
-
